@@ -1,17 +1,25 @@
 {
-  "name": "react-canvasjs-chart-samples",
+  "homepage": "http://mohped.github.io/canvasjs-react-samples-1",
+  "name": "canvasjs-react-samples-1",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "jquery": "^3.5.1",
     "react": "^16.8.3",
+    "react-bootstrap": "^1.4.0",
     "react-dom": "^16.8.3",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "clean" : "gh-pages-clean"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -21,5 +29,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "bootstrap": "^4.5.3",
+    "gh-pages": "^3.1.0",
+    "popper.js": "^1.16.1"
+  }
 }
