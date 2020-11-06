@@ -12,8 +12,10 @@ class CanvasJSChart extends React.Component {
 		this.chartContainerId = "canvasjs-react-chart-container-" + CanvasJSChart._cjsContainerId++;
 	}	
 	componentDidMount() {
-		//Create Chart and Render		
-		this.chart = new CanvasJS.Chart(this.chartContainerId, this.options);
+		//Create Chart and Render
+		console.log("options: ",this.options);
+		const {data: dataExtracted, ...restProps} = this.options;
+		this.chart = new CanvasJS.Chart(this.chartContainerId, {...restProps, data: [dataExtracted[0], dataExtracted[1]]});
 		this.chart.render();
 		
 		if(this.props.onRef)
@@ -36,13 +38,13 @@ class CanvasJSChart extends React.Component {
 	}		
 	render() {		
 		//return React.createElement('div', { id: this.chartContainerId, style: this.containerProps });		
-		return <div id = {this.chartContainerId} style = {this.containerProps}/>		
+		return <div id = {this.chartContainerId} style = {this.containerProps}/>
 	}	
 }
 
 var CanvasJSReact = {
     CanvasJSChart: CanvasJSChart,
-    CanvasJS: CanvasJS
+    CanvasJS: CanvasJS,
 };
 
 export default CanvasJSReact;

@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "jquery": "^3.5.1",
     "react": "^16.8.3",
     "react-bootstrap": "^1.4.0",
@@ -19,7 +21,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "clean" : "gh-pages-clean"
+    "clean": "gh-pages-clean"
   },
   "eslintConfig": {
     "extends": "react-app"

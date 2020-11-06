@@ -7,7 +7,9 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.chartjs-render-monitor{
+  height: 300px !important;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
