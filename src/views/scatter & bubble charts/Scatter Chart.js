@@ -421,24 +421,61 @@ class ScatterChart extends Component {
     var legendItems = [];
     for (var i = 0; i < chart.options.data.length; i++) {
 
+    if (i%2==0) {
       legendItems.push(
         <div
+          
           onClick={this.hideUnhideDataSeries}
           data-key={i}
           key={i}
           id={chart.options.data[i].id}
           style={{
-            color: chart.data[i].color,
+            color: "white",
             float: "right",
-            marginLeft: "15px",
+            marginLeft: "5px",
             fontSize: ".9rem",
             userSelect: "none",
-            textDecoration: chart.data[i].visible ? 'none' : 'line-through'
+            textDecoration: chart.data[i].visible ? "none" : "line-through",
+            border: "1px solid",
+            borderRadius: "15px",
+            backgroundColor: chart.data[i].color,
+            padding: "5px 10px",
+            marginBottom: "5px",
+            cursor: "pointer",
           }}
         >
           {chart.options.data[i].legendText}
         </div>
-      );
+      );  
+    } else {
+        legendItems.push(
+          <div
+            onClick={this.hideUnhideDataSeries}
+            data-key={i}
+                key={i}
+            
+            id={chart.options.data[i].id}
+            style={{
+              color: chart.data[i].color,
+              float: "right",
+              marginLeft: "5px",
+              fontSize: ".9rem",
+              userSelect: "none",
+              textDecoration: chart.data[i].visible ? "none" : "line-through",
+              border: "1px solid",
+                borderRadius: "20px",
+              borderColor:chart.data[i].color,
+              backgroundColor:'white' ,
+              padding: "5px 10px",
+              marginBottom: "5px",
+              cursor: "pointer",
+            }}
+          >
+            {chart.options.data[i].legendText}
+          </div>
+        );
+    }
+      
     }
     this.setState({ legendItems });
   }
@@ -619,7 +656,7 @@ class ScatterChart extends Component {
             maxHeight: "200px",
             overflow: "auto",
             padding: "10px",
-            maxHeight: "100px",
+            maxHeight: "150px",
             //border: ".5px solid",
             backgroundColor: "#fafafa",
             boxShadow: ".5px 6px 5px -6px black",
